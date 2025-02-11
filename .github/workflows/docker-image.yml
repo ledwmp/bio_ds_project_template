@@ -14,6 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Maximize build disk space
+        uses: easimon/maximize-build-space@v10
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-codeql: 'true'
+          remove-haskell: 'true'
+      - name: Check disk space
+        run: |
+          echo "Free space:"
+          df -h 
       - name: Pull the repo
         uses: actions/checkout@v4
       - name: Log in to Docker Hub
@@ -24,13 +35,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Build and Push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: |
             ledwmp/bio_ds_project_template-docker:latest
             ledwmp/bio_ds_project_template-docker:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
 
 

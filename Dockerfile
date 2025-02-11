@@ -14,6 +14,7 @@ COPY environment.yml ./
 RUN micromamba env create -f environment.yml && \
     micromamba install -c conda-forge conda-pack && \
     micromamba clean -afy && \
+    micromamba run -n bio_ds_env pip cache purge && \
     micromamba run -n base conda-pack -p ${MAMBA_ROOT_PREFIX}/envs/bio_ds_env -o /tmp/env.tar -d /venv && \
     mkdir /venv && \
     tar xf /tmp/env.tar -C /venv && \
