@@ -26,6 +26,7 @@ dependencies:
   - pip:
     - PyYAML==6.0.2
     - apache-beam==2.62.0
+    - awscli==1.37.19
     - biopython==1.85
     - black==25.1.0
     - datasets==3.2.0
