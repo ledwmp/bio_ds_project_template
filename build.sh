@@ -3,6 +3,16 @@
 set -euo pipefail
 
 project_name="${PWD##*/}"
+origin_url=$(git remote get-url origin 2>/dev/null)
+
+if [[ -n "$origin_url" && "$origin_url" == "https://github.com/ledwmp/bio_ds_project_template.git" ]]; then
+    echo "Git origin matches: $origin_url, remove git artifacts."
+    rm -rf .git*
+    git init
+    git add --all
+    git commit -m "Initial commit to ${project_name}"
+fi
+
 local_environment_yml="environment.yml"
 remote_environment_yml="https://raw.githubusercontent.com/ledwmp/bio_ds_project_template/refs/heads/main/environment.yml"
 
