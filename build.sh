@@ -4,9 +4,13 @@ set -euo pipefail
 
 project_name="${PWD##*/}"
 origin_url=$(git remote get-url origin 2>/dev/null)
+template_repo_name=$(basename -s .git "$origin_url" 2>/dev/null || echo "")
 
-if [[ -n "$origin_url" && "$origin_url" == "https://github.com/ledwmp/bio_ds_project_template.git" ]]; then
+if [[ -n "$origin_url" && \
+      "$origin_url" == "https://github.com/ledwmp/bio_ds_project_template.git" && \
+      "$project_name" != "$template_repo_name" ]]; then
     echo "Git origin matches: $origin_url, remove git artifacts."
+    rm LICENSE
     rm -rf .git*
     git init
     git add --all
