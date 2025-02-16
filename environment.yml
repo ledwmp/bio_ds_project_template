@@ -31,7 +31,7 @@ dependencies:
     - black==25.1.0
     - bokeh==3.4.3
     - dask==2024.8.0
-    - cyvcf2-0.31.1
+    - cyvcf2==0.31.1
     - datasets==3.2.0
     - fastapi==0.115.8
     - fastparquet==2024.11.0
@@ -49,13 +49,13 @@ dependencies:
     - openpyxl==3.1.5
     - optuna==4.2.1
     - pandas==2.2.3
-    - polars-1.22.0
+    - polars==1.22.0
     - plotly==6.0.0
     - pyBigWig==0.3.24
-    - pybiomart-0.2.0
+    - pybiomart==0.2.0
     - pyarrow==16.1.0
     - pylint==3.3.4
-    - pyranges-0.1.2
+    - pyranges==0.1.2
     - pysam==0.23.0
     - pyspark==3.5.4
     - pytest==8.3.4
