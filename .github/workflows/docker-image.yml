@@ -49,6 +49,6 @@ jobs:
             ledwmp/bio_ds_project_template-docker:latest
             ledwmp/bio_ds_project_template-docker:${{ github.sha }}
           cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-to: type=gha,mode=min
 
 
