@@ -19,7 +19,7 @@ RUN micromamba env create -f environment.yml && \
     micromamba run -n base conda-pack -p ${MAMBA_ROOT_PREFIX}/envs/bio_ds_env -o /tmp/env.tar.gz -d /venv && \
     rm -r ${MAMBA_ROOT_PREFIX}/envs/bio_ds_env && \
     mkdir /venv && \
-    tar xvfz /tmp/env.tar.gz -C /venv && \
+    tar xfz /tmp/env.tar.gz -C /venv && \
     rm /tmp/env.tar.gz
 
 FROM mambaorg/micromamba:2-cuda11.7.1-ubuntu20.04 AS base
