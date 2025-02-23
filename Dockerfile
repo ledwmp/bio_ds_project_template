@@ -45,5 +45,5 @@ EXPOSE 8888
 
 ENV MAMBA_ROOT_PREFIX=/venv
 
-CMD [ "micromamba", "run", "-n", "base", "jupyter", "lab", "--ip=0.0.0.0", "--allow-root",\
-    "--no-browser", "--port=8888", "--NotebookApp.token=''", "--NotebookApp.password=''" ]
+CMD [ "micromamba", "run", "-n", "base", "jupyter", "lab", "--ip=0.0.0.0", \
+    "--allow-root", "--no-browser", "--port=8888" ]

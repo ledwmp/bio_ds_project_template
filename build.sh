@@ -3,7 +3,7 @@
 set -euo pipefail
 
 project_name="${PWD##*/}"
-origin_url=$(git remote get-url origin 2>/dev/null)
+origin_url=$(git remote get-url origin 2>/dev/null || echo "")
 template_repo_name=$(basename -s .git "$origin_url" 2>/dev/null || echo "")
 
 if [[ -n "$origin_url" && \

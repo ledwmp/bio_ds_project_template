@@ -34,6 +34,7 @@ dependencies:
     - black==25.1.0
     - bokeh==3.4.3
     - dask==2024.8.0
+    - dvc==3.43.1
     - cyvcf2==0.31.1
     - datasets==3.2.0
     - fastapi==0.115.8
@@ -47,13 +48,18 @@ dependencies:
     - lightgbm==4.5.0
     - lz4==4.4.3
     - matplotlib==3.9.4
+    - mkdocs==1.6.1
+    - mkdocs-material==9.6.5
+    - mkdocs-jupyter==0.25.1
     - mlflow==2.20.1
+    - nbqa==1.9.1
     - numpy==2.0.2
     - openpyxl==3.1.5
     - optuna==4.2.1
     - pandas==2.2.3
     - polars==1.22.0
     - plotly==6.0.0
+    - pre-commit==4.1.0
     - pyBigWig==0.3.24
     - pybiomart==0.2.0
     - pyarrow==16.1.0
@@ -68,6 +74,7 @@ dependencies:
     - scikit-learn==1.6.1
     - scipy==1.13.1
     - seaborn==0.13.2
+    - snakemake==7.32.4
     - SQLAlchemy==2.0.38
     - squidpy==1.6.0
     - statsmodels==0.14.4
